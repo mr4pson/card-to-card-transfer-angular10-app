@@ -1,0 +1,72 @@
+.page-container {
+    padding-top: 50px;
+    .user-cards-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .user-card {
+            background: #1890ff;
+            width: 50%;
+            border-radius: 15px;
+            h1 {
+                text-align: center;
+                color: #fff;
+                line-height: 20px;
+            }
+            .number-wrap {
+                display: flex;
+                justify-content: space-between;
+                nz-form-item {
+                    width: 21%;
+                    input {
+                        width: 75px;
+                        padding-left: 18px;
+                    }
+                }
+            }
+            .info-wrap {
+                display: flex;
+                justify-content: space-between;
+                .left-com {
+                    input {
+                        width: 175px;
+                    }
+                }
+                .right-col {
+                    .date-wrap {
+                        width: 170px;
+                        display: flex;
+                        justify-content: space-between;
+                        nz-select {
+                            width: 75px;
+                            border-radius: 8px;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+            label {
+                color: #fff;
+            }
+            &.recipient-card {
+                height: 245px;
+                h1 {
+                    padding-bottom: 40px;
+                }
+            }
+        }
+        .chevron {
+            margin: 0 20px;
+        }
+    }
+    input {
+        border-radius: 7px;
+    }
+    .actions-wrap {
+        display: flex;
+        padding-top: 40px;
+        justify-content: space-between;
+        width: 320px;
+        margin: auto;
+    }
+}

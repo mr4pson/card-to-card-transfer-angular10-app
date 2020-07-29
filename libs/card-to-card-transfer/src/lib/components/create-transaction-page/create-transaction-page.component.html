@@ -1,0 +1,106 @@
+<div class="page-container">
+    <form [formGroup]="form" nz-form (submit)="onSubmit()">
+        <div class="user-cards-wrap">
+            <nz-card formGroupName="payer" class="user-card">
+                <h1>Карта плательщика</h1>
+                <label>Номер</label>
+                <div class="number-wrap">
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input (keyup)="keytab($event)" [imask]="maskConfig.cardNumberMask" nz-input formControlName="cardNumber1" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input (keyup)="keytab($event)" [imask]="maskConfig.cardNumberMask" nz-input formControlName="cardNumber2" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input (keyup)="keytab($event)" [imask]="maskConfig.cardNumberMask" nz-input formControlName="cardNumber3" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input (keyup)="keytab($event)" [imask]="maskConfig.cardNumberMask" nz-input formControlName="cardNumber4" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="info-wrap">
+                    <div class="left-com">
+                        <label>ФИО держателя</label>
+                        <nz-form-item>
+                            <nz-form-control>
+                                <input nz-input formControlName="name" required />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="right-col">
+                        <label>Активна до</label>
+                        <div class="date-wrap">
+                            <nz-form-item>
+                                <nz-form-control>
+                                    <nz-select formControlName="activeUntilMonth">
+                                        <nz-option *ngFor="let month of months" [nzValue]="month" [nzLabel]="month"></nz-option>
+                                    </nz-select>
+                                </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item>
+                                <nz-form-control>
+                                    <nz-select formControlName="activeUntilYear">
+                                        <nz-option *ngFor="let year of years" [nzValue]="year" [nzLabel]="year"></nz-option>
+                                    </nz-select>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                </div>
+            </nz-card>
+            <div class="chevron">
+                <svg width="2em" height="2em" viewBox="0 0 10 19"><path fill="#1890ff" d="M9.735 9.73l-8.168 8.164a.92.92 0 0 1-1.298 0 .915.915 0 0 1 0-1.296l7.52-7.516-7.52-7.517a.916.916 0 0 1 0-1.297.92.92 0 0 1 1.299 0l8.167 8.165a.925.925 0 0 1 0 1.296z"></path></svg>
+            </div>
+            <nz-card formGroupName="recipient" class="user-card recipient-card">
+                <h1>Карта получателя</h1>
+                <label>Номер</label>
+                <div class="number-wrap">
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input (keyup)="keytab($event)" [imask]="maskConfig.cardNumberMask" nz-input formControlName="cardNumber1" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input (keyup)="keytab($event)" [imask]="maskConfig.cardNumberMask" nz-input formControlName="cardNumber2" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input (keyup)="keytab($event)" [imask]="maskConfig.cardNumberMask" nz-input formControlName="cardNumber3" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input (keyup)="keytab($event)" [imask]="maskConfig.cardNumberMask" nz-input formControlName="cardNumber4" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </nz-card>
+        </div>
+        <div class="actions-wrap">
+            <nz-form-item>
+                <nz-form-control>
+                    <input [imask]="maskConfig.sumMask" nz-input formControlName="sum" placeholder="Сумма" />
+                </nz-form-control>
+            </nz-form-item>
+            <button 
+                nz-button 
+                class="submit" 
+                nzSize="medium" 
+                nzType="primary" 
+                nzShape="round"
+                nzGhost
+                [disabled]="!form.valid"
+            >Перевести</button>
+        </div>
+    </form>
+</div>

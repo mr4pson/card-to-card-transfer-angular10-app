@@ -1,0 +1,26 @@
+<div class="page-container">
+    <nz-table #basicTable [nzData]="transactions">
+        <thead>
+            <tr>
+                <th>Карта плательщика</th>
+                <th>Карта получателя</th>
+                <th>Сумма</th>
+                <th>Дата выполнения</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of basicTable.data">
+                <td>{{ showLimitedCardNumber(transaction.payer.cardNumber) }}</td>
+                <td>{{ showLimitedCardNumber(transaction.recipient.cardNumber) }}</td>
+                <td>{{ formatNumber(transaction.sum) }}</td>
+                <td>{{ transaction.dc | date:'dd.MM.yyyy hh:mm:ss' }}</td>
+                <td>
+                    <a (click)="repeatTransaction(transaction.id)">Повторить</a>
+                    <nz-divider nzType="vertical"></nz-divider>
+                    <a (click)="removeTransaction(transaction.id)">Удалить</a>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+</div>
