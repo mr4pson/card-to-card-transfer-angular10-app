@@ -8,7 +8,7 @@ This project was generated using [Nx](https://nx.dev).
 
 ## How to run
 
-  - `npm i @nrwl/nx` -g
+  - `npm i @nrwl/nx -g` 
 
   - `npm i`
 
