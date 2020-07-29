@@ -6,6 +6,14 @@ This project was generated using [Nx](https://nx.dev).
 
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 
+## How to run
+
+  - `npm i @nrwl/nx`
+
+  - `npm i`
+
+  - `nx run client:serve`
+
 ## Quick Start & Documentation
 
 [Nx Documentation](https://nx.dev/angular)
